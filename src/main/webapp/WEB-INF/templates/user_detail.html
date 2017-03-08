@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>UserDetail</title>
+    <style type="text/css">
+        body{
+            background-color: #585858;
+        }
+
+        table tr td{
+            height: 200px;
+            width: 500px;
+            background-color: #D9D9D9;
+            font-family: "Microsoft YaHei", "微软雅黑", "sans-serif";
+            border: #533c12 10px;
+        }
+    </style>
+</head>
+<body>
+    <table style="margin: 0 auto">
+        <tr>
+            <td>username</td>
+            <td>Role</td>
+        </tr>
+        <tr>
+            <td>
+                <span th:text="${user.username}"></span>
+            </td>
+            <td>
+                <span th:text="${user.ROLE_USER}"></span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

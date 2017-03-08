@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<style type="text/css">
+    body{
+        background-image: url("/static/images/index.jpg");
+    }
+    .main{
+        position: absolute;
+        margin: 30% 40%;
+        width: 400px;
+        height: 300px;
+        border: 10px;
+    }
+    .regist{
+        font-family: 华文行楷;
+        font-size: 40px;
+        margin: 0 auto;
+    }
+</style>
+<body>
+<div class="main">
+<h2>恭喜您，登录成功！ </h2>
+<a th:href="@{/regist}" class="regist">新用户注册</a>
+</div>
+</body>
+</html>

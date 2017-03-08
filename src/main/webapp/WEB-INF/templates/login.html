@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>LoginPage</title>
+    <link th:href="@{/static/css/login.css}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function checkForm(){
+            var userName=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            if(userName==null || userName==""){
+                document.getElementById("login_err").innerHTML="用户名不能为空";
+                return false;
+            }
+            if(password==null || password==""){
+                document.getElementById("login_err").innerHTML="密码不能为空";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div id="login_center">
+    <div id="login_area">
+        <div id="login_box">
+            <div id="login_form">
+                <form id="submitForm"  th:action="@{/login}" method="post" onsubmit="return checkForm()">
+                    <div id="login_tip">
+                        <span>请登录</span>
+                        <span id="login_err" class="sty_txt2"></span>
+                    </div>
+                    <div>
+                        用户名： <input type="text"  id="userName" name="username" class="username"  />
+                    </div>
+                    <div>
+                        密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password"  id="password"  name="password" class="pwd" />
+                    </div>
+                    <div>
+                        <input id="remember_me" name="remember-me" type="checkbox"/>
+                        <label for="remember_me" class="inline">Remember me</label>
+                    </div>
+                    <div id="btn_area">
+                        <input type="submit" class="login_btn" id="login_sub"  value="登  录"/>
+                        <input type="reset" class="login_btn" id="login_ret" value="重 置"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
